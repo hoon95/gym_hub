@@ -1,15 +1,25 @@
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-
-import Home from "./components/Home";
-import Search from "./components/Search";
+import GlobalStyle from './common/GlobalStyle';
+import HomePage from './pages/HomePage';
+import SearchPage from './pages/SearchPage';
+import ProgramPage from './pages/ProgramPage';
+import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
-    <Routes>
-      <Route path='/home' element={<Home />}></Route>
-      <Route path='/search' element={<Search />}></Route>
-    </Routes>
-  )
+    <>
+      <GlobalStyle />
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/search' element={<SearchPage />} />
+        <Route path='/program' element={<ProgramPage />} />
+      </Routes>
+      <Footer />
+    </>
+  );
 }
 
 export default App;
