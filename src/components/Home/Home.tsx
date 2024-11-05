@@ -1,7 +1,6 @@
-import React from 'react';
 import { Container } from './Home.styled';
 
-function Home() {
+export const Home = () => {
   return (
     <Container>
       <h1>Gymhub에 오신 것을 환영합니다!</h1>
@@ -9,5 +8,3 @@ function Home() {
     </Container>
   );
 }
-
-export default Home;
