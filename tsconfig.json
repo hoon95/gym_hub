@@ -1,6 +1,6 @@
 
 {
-  "include": ["src/**/*", "package.json"],
+  "include": ["src", "types","package.json"],
   "compilerOptions": {
       "composite": true,
       "declaration": true,
