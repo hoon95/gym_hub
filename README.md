@@ -13,7 +13,6 @@
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white">
   <img src="https://img.shields.io/badge/Styled_Components-DB7093?style=flat&logo=styled-components&logoColor=white">
   <img src="https://img.shields.io/badge/React_Router-CA4245?style=flat&logo=React-Router&logoColor=white">
-  <img src="https://img.shields.io/badge/zustand-433E38?style=flat&logo=&logoColor=white">
 </span>
 
 <br><br><br>
@@ -39,7 +38,7 @@
 
 ## 📅 개발 기간
 
-🌱 기획 및 디자인 : 2024.11.04 - 2024.11.08<br>
+🌱 기획 및 디자인 : <br>
 🌱 UI 구현 : <br>
 🌱 기능 구현 :
 
