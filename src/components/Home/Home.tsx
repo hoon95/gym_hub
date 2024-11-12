@@ -1,10 +1,22 @@
+import React, { useState } from 'react';
 import { Container } from './Home.styled';
+import { Modal } from '../Modal/Modal';
+import { GlobalStyle } from '../../common/GlobalStyle';
+import { Button } from '@mui/material';
 
 export const Home = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <Container>
-      <h1>Gymhub에 오신 것을 환영합니다!</h1>
-      <p>헬스장을 처음 이용하는 초보자를 위한 다양한 정보와 프로그램을 제공합니다.</p>
+      <GlobalStyle />
+        <h2 className='title'>내 몸은 몇 살일까?</h2>
+        <p className='desc'>자가진단 테스트</p>
+        <Button onClick={openModal} variant="outlined" color="success" className='testBtn'>Click</Button>
+        {isModalOpen && <Modal closeModal={closeModal} />}
     </Container>
   );
 }
