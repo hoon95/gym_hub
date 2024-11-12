@@ -13,10 +13,13 @@ export const Home = () => {
   return (
     <Container>
       <GlobalStyle />
+      <section>
         <h2 className='title'>내 몸은 몇 살일까?</h2>
         <p className='desc'>자가진단 테스트</p>
-        <Button onClick={openModal} variant="outlined" color="success" className='testBtn'>Click</Button>
+        <Button onClick={openModal} variant="outlined" color="primary" className='testBtn'>Click</Button>
         {isModalOpen && <Modal closeModal={closeModal} />}
+      </section>
+      
     </Container>
   );
 }

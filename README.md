@@ -1,6 +1,6 @@
 # 💻 프로젝트 소개
 
-<img src="/public/cover.png">
+<img src="/public/img/cover.png">
 
 `초보자들이 헬스장을 쉽게 이용할 수 있도록 다양한 정보와 프로그램을 제공하는 플랫폼`
 

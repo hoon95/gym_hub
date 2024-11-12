@@ -1,18 +1,28 @@
 import styled from "@emotion/styled";
 
-export const NavbarContainer = styled.nav`
+  export const NavbarContainer = styled.nav`
+  position: sticky;
+  top: 0;
+  z-index: 99;
+
   display: flex;
   justify-content: space-between;
-  height: 100px;
+  padding: 0 calc(var(--gap) * 5);
+
+  img {
+    width: 200px;
+    height: 100px;
+    object-fit: contain;
+  }
 
   div {
     display: flex;
     justify-content: end;
     gap: var(--gap);
-    padding: 40px;
+    padding: calc(var(--gap) * 2);
 
     a {
-      color: #000;
+      color: #ffffff;
       text-decoration: none;
     }
   }
