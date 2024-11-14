@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
   export const NavbarContainer = styled.nav`
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 99;
 
@@ -9,13 +9,17 @@ import styled from "@emotion/styled";
   justify-content: space-between;
   padding: 0 calc(var(--gap) * 5);
 
+  .active {
+    font-weight: bold;
+  }
+
   img {
     width: 200px;
     height: 100px;
     object-fit: contain;
   }
 
-  div {
+  ul {
     display: flex;
     justify-content: end;
     gap: var(--gap);

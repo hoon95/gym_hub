@@ -22,6 +22,9 @@ export const GlobalStyle = () => (
         --font-bs: 1rem;
 
         --gap: 20px;
+
+        --gray-500: #8a8585;
+        --gray-300: #ebebeb;
       }
 
       @font-face {
