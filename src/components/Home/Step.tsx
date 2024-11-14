@@ -1,45 +1,70 @@
 import { Section } from 'react-fullpage';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { StepContainer } from './Step.styled';
+import { CardWrapper } from './Card';
 import { GlobalStyle } from '../../common/GlobalStyle';
 
-// import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-
+// import Swiper
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
 
-const Slider = () => {
+const getRandomTags = (tags: string[], count: number) => {
+  const shuffled = [...tags].sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
+};
+
+interface SliderProps {
+  tags: string[];
+  num: number;
+  dir: string;
+}
+
+const Slider: React.FC<SliderProps> = ({ tags, num, dir }) => {
+  const randomTags = getRandomTags(tags, num);
+
   return (
     <Swiper
-      slidesPerView={"auto"}
+      dir={dir}
+      allowTouchMove={false}
+      slidesPerView={5}
+      centeredSlides={true}
+      speed={4000}
+      loop={true}
+      modules={[Autoplay]}
       autoplay={{
         delay: 0,
         disableOnInteraction: false
       }}
-      speed={500}
-      modules={[Autoplay]}
       className="hashSlide"
     >
-      <SwiperSlide>Slide 1</SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
+      {randomTags.map((tag) => (
+        <SwiperSlide dir={dir}>{tag}</SwiperSlide>
+      ))}
     </Swiper>
   )
 }
 
 export const Step = () => {
+  const tags = [
+    "#운동스타그램", "#헬스타그램", "#운동하는 직장인", "#다이어트", "#다이어트그램",
+    "#다이어트 식단", "#식단조절", "#다이어터", "#몸스타그램", "#필라테스",
+    "#요가", "#피트니스", "#스포츠 모델", "#피지크", "#벌크업",
+    "#힙업", "#PT", "#유지어터", "#웨이트"
+  ];
+  
   return (
     <Section>
+      {/* Hash Slide */}
       <StepContainer>
         <GlobalStyle />
         <section>
           <h2>A부터 Z까지, 헬스를 위한 첫 걸음</h2>
           <p>나에게 맞는 운동을 찾아보세요</p>
-          <Slider />
+          <Slider tags={tags} num={5} dir={'ltr'} />
+          <Slider tags={tags} num={5} dir={'rtl'} />
         </section>
       </StepContainer>
+      <CardWrapper />
     </Section>
   );
 }

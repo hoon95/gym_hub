@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const StepContainer = styled.div`
   text-align: center;
-  padding-top: calc(var(--gap) * 10);
+  padding: calc(var(--gap) * 5) 0;
 
   h2 {
     font-size: var(--font-md);
@@ -15,6 +15,15 @@ export const StepContainer = styled.div`
   }
 
   .hashSlide {
-    padding-top: calc(var(--gap) * 5);
+    padding-top: calc(var(--gap) * 2);
+
+    & .swiper-slide {
+      font-size: calc(var(--font-md) * 1.2);
+      color: var(--gray-300);
+    }
+
+    & .swiper-wrapper {
+      transition-timing-function: linear;
+    }
   }
 `;

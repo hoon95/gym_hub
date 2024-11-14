@@ -9,7 +9,7 @@ export const Navbar = () => {
         <NavLink to="/" 
         className={({ isActive }) =>
           isActive ? "active" : ""}>Home</NavLink>
-        <NavLink to="/find" 
+        <NavLink to="/search" 
         className={({ isActive }) =>
           isActive ? "active" : ""}>지점 찾기</NavLink>
         <NavLink to="/pt" 
