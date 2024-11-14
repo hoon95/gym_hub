@@ -21,10 +21,12 @@ export const GlobalStyle = () => (
         --font-md: 2rem;
         --font-bs: 1rem;
 
-        --gap: 20px;
+        --gap: 1.5rem;
 
         --gray-500: #8a8585;
         --gray-300: #ebebeb;
+
+        --white: #ffffff;
       }
 
       @font-face {

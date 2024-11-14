@@ -29,16 +29,19 @@ export const HomeContainer = styled.div`
     z-index: 1;
   }
 
-  section {
-    padding-bottom: calc(var(--gap) * 6);
+  .textWrapper {
     z-index: 2;
+    padding-bottom: calc(var(--gap) * 5);
+
     .title {
       font-size: var(--font-lg);
+      font-weight: bold;
       padding-bottom: var(--gap);
     }
       
     .desc {
       font-size: var(--font-md);
+      font-weight: regular;
       padding-bottom: var(--gap);
     }
     
@@ -47,4 +50,5 @@ export const HomeContainer = styled.div`
       border-radius: 15px;
     }
   }
+
 `;

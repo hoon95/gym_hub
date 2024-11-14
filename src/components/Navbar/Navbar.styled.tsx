@@ -2,12 +2,14 @@ import styled from "@emotion/styled";
 
   export const NavbarContainer = styled.nav`
   position: fixed;
+  width: 100%;
   top: 0;
+  padding: 0 calc(var(--gap) * 5);
+  box-sizing: border-box;
   z-index: 99;
 
   display: flex;
   justify-content: space-between;
-  padding: 0 calc(var(--gap) * 5);
 
   .active {
     font-weight: bold;
@@ -26,7 +28,7 @@ import styled from "@emotion/styled";
     padding: calc(var(--gap) * 2);
 
     a {
-      color: #ffffff;
+      color: var(--white);
       text-decoration: none;
     }
   }
