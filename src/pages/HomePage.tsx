@@ -4,6 +4,7 @@ import { Step } from "../components/Home/Step";
 import { Footer } from "../components/Footer/Footer";
 
 const options = {
+  navigation: false,
   activeClass: 'pageActive',
   anchors: ['1', '2', '3'],
   delay: 900,

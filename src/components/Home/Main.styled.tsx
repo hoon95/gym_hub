@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import mainBg from "../../assets/img/home/main_bg.jpg";
 
 export const HomeContainer = styled.div`
   position: absolute;
@@ -6,7 +7,7 @@ export const HomeContainer = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: rgba(0,0,0,.7);
-  background-image: url(${process.env.PUBLIC_URL}/img/home/main_bg.jpg);
+  background-image: url(${mainBg});
   background-size: cover;
   color: #ffffff;
   box-sizing: border-box;

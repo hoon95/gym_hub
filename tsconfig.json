@@ -2,6 +2,7 @@
 {
   "include": ["src", "types","package.json"],
   "compilerOptions": {
+      "baseUrl": "src",
       "composite": true,
       "declaration": true,
       "declarationMap": true,

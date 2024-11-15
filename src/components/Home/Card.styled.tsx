@@ -7,10 +7,10 @@ export const CardContainer = styled.div`
     padding: 0 calc(var(--gap) * 5);
 
     & .content {
-        min-height: calc(var(--gap) * 5);
+        /* min-height: calc(var(--gap) * 3); */
 
         & .title {
-            min-height: calc(var(--gap) * 3);
+            min-height: calc(var(--gap) * 2);
             font-size: calc(var(--text-sm) * 1.2);
             font-weight: bold;
         }

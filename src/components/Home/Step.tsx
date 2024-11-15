@@ -54,7 +54,6 @@ export const Step = () => {
   
   return (
     <Section>
-      {/* Hash Slide */}
       <StepContainer>
         <GlobalStyle />
         <section>
