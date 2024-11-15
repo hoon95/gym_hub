@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import mainBg from "../../assets/img/home/main_bg.jpg";
+import mainBg from "../../assets/img/home/main_bg.png";
 
 export const HomeContainer = styled.div`
   position: absolute;
