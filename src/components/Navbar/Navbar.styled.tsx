@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-  export const NavbarContainer = styled.nav`
+export const NavbarContainer = styled.nav`
   position: fixed;
   width: 100%;
   height: 100px;
@@ -13,10 +13,6 @@ import styled from "@emotion/styled";
 
   display: flex;
   justify-content: space-between;
-
-  .active {
-    font-weight: bold;
-  }
 
   img {
     width: 200px;
