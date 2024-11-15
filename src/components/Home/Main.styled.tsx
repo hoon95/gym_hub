@@ -4,20 +4,20 @@ import mainBg from "../../assets/img/home/main_bg.png";
 export const HomeContainer = styled.div`
   position: absolute;
   top: 0;
+  left: calc(var(--gap) * -5);
   width: 100vw;
   height: 100vh;
   background-color: rgba(0,0,0,.7);
   background-image: url(${mainBg});
   background-size: cover;
   color: #ffffff;
-  box-sizing: border-box;
+  padding: 0 calc(var(--gap) * 5);
 
   display: flex;
   flex-direction: column;
   justify-content: end;
   align-items: flex-start;
   gap: var(--gap);
-  padding: 0 calc(var(--gap) * 5);
 
   &::before {
     content: '';

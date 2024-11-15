@@ -4,7 +4,6 @@ export const CardContainer = styled.div`
     display: flex;
     justify-content: space-between;
     gap: var(--gap);
-    padding: 0 calc(var(--gap) * 5);
 
     & .content {
         /* min-height: calc(var(--gap) * 3); */

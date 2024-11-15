@@ -52,6 +52,7 @@ export const GlobalStyle = () => (
         color: #333333;
         background-color: #ffffff;
         margin: 0;
+        padding: 0 calc(var(--gap) * 5);
       }
     `}
   />
