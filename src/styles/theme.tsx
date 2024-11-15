@@ -6,4 +6,9 @@ export const theme = createTheme({
       main: '#008b3a'
     },
   },
+  typography: {
+    fontFamily: [
+      'Pretendard',
+    ].join(',')
+  }
 });

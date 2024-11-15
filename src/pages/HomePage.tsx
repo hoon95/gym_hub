@@ -1,5 +1,5 @@
 import { SectionsContainer } from 'react-fullpage';
-import { Home } from "../components/Home/Home";
+import { Home } from "../components/Home/Main";
 import { Step } from "../components/Home/Step";
 import { Footer } from "../components/Footer/Footer";
 

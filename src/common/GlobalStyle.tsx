@@ -6,10 +6,6 @@ import PretendardMediumWoff2 from '../assets/fonts/pretendard/Pretendard-Medium.
 import PretendardMediumWoff from '../assets/fonts/pretendard/Pretendard-Medium.woff';
 import PretendardBoldWoff2 from '../assets/fonts/pretendard/Pretendard-Bold.woff2';
 import PretendardBoldWoff from '../assets/fonts/pretendard/Pretendard-Bold.woff';
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
 
 export const GlobalStyle = () => (
   <Global
@@ -17,16 +13,16 @@ export const GlobalStyle = () => (
       ${emotionReset}
 
       :root {
-        --font-lg: 3rem;
-        --font-md: 2rem;
-        --font-bs: 1rem;
+        --text-lg: 3rem;
+        --text-md: 2rem;
+        --text-sm: 1rem;
 
         --gap: 1.5rem;
 
         --gray-500: #8a8585;
         --gray-300: #ebebeb;
 
-        --white: #ffffff;
+        --light: #ffffff;
       }
 
       @font-face {

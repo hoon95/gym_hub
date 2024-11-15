@@ -2,10 +2,10 @@ import styled from "@emotion/styled";
 
 export const StepContainer = styled.div`
   text-align: center;
-  padding: calc(var(--gap) * 5) 0;
+  padding: calc(var(--gap) * 4) 0;
 
   h2 {
-    font-size: var(--font-md);
+    font-size: var(--text-md);
     font-weight: bold;
     padding-bottom: var(--gap);
   }
@@ -18,7 +18,7 @@ export const StepContainer = styled.div`
     padding-top: calc(var(--gap) * 2);
 
     & .swiper-slide {
-      font-size: calc(var(--font-md) * 1.2);
+      font-size: calc(var(--text-md) * 1.2);
       color: var(--gray-300);
     }
 

@@ -28,7 +28,7 @@ import styled from "@emotion/styled";
     padding: calc(var(--gap) * 2);
 
     a {
-      color: var(--white);
+      color: var(--light);
       text-decoration: none;
     }
   }
