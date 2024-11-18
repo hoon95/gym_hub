@@ -1,9 +1,13 @@
 import { useState } from 'react';
-import { NavbarContainer } from './Navbar.styled';
+import { NavbarContainer, NavbarOpen } from './Navbar.styled';
 import { NavLink } from 'react-router-dom';
-import { IconButton } from '@mui/material';
+import { IconButton, Drawer, Divider } from '@mui/material';
+
+// Icon Load
 import MenuIcon from '@mui/icons-material/Menu';
-import Drawer from '@mui/material/Drawer';
+import HomeIcon from '@mui/icons-material/Home';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,23 +18,30 @@ export const Navbar = () => {
 
   return (
     <NavbarContainer>
-      <img src={`${process.env.PUBLIC_URL}/img/logo_white.png`} alt="logo" />
       <IconButton edge="start" color="inherit" aria-label="menu" onClick={toggleMenu}>
-        <MenuIcon className="hamburger" />
+        <MenuIcon />
       </IconButton>
       
-      <Drawer anchor="left" open={isMenuOpen} onClose={toggleMenu}>
-        <ul>
-          <li>
-            <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/search" className={({ isActive }) => isActive ? "active" : ""}>지점 찾기</NavLink>
-          </li>
-          <li>
-            <NavLink to="/pt" className={({ isActive }) => isActive ? "active" : ""}>PT</NavLink>
-          </li>
-        </ul>
+      <Drawer anchor="right" open={isMenuOpen} onClose={toggleMenu}>
+        <NavbarOpen>
+          {/* <IconButton onClick={toggleMenu} className="closeBtn">
+            <CloseIcon />
+          </IconButton> */}
+          <NavLink to="/" onClick={toggleMenu}>
+            <HomeIcon />
+            <span>Home</span>
+          </NavLink>
+          
+          <NavLink to="/search" onClick={toggleMenu}>
+            <LocationOnIcon />
+            <span>지점 찾기</span>
+          </NavLink>
+          
+          <NavLink to="/pt" onClick={toggleMenu}>
+            <PeopleAltIcon />
+            <span>PT+</span>
+          </NavLink>
+        </NavbarOpen>
       </Drawer>
     </NavbarContainer>
   );

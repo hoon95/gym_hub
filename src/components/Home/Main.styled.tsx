@@ -30,6 +30,12 @@ export const HomeContainer = styled.div`
     z-index: 1;
   }
 
+  & .logo {
+    position: absolute;
+    top: var(--gap);
+    z-index: 2;
+  }
+
   .textWrapper {
     z-index: 2;
     padding-bottom: calc(var(--gap) * 5);

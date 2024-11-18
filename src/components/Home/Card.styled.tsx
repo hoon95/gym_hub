@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const CardContainer = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     gap: var(--gap);
 
     & .content {

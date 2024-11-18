@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const StepContainer = styled.div`
   text-align: center;
-  padding: calc(var(--gap) * 4) 0;
+  padding: calc(var(--gap) * 4) 0 calc(var(--gap) * 2) 0;
 
   h2 {
     font-size: var(--text-md);
@@ -15,7 +15,7 @@ export const StepContainer = styled.div`
   }
 
   .hashSlide {
-    padding-top: calc(var(--gap) * 2);
+    padding: calc(var(--gap) * 2) 0 0 0;
 
     & .swiper-slide {
       font-size: calc(var(--text-md) * 1.2);
