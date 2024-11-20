@@ -24,9 +24,6 @@ export const Navbar = () => {
       
       <Drawer anchor="right" open={isMenuOpen} onClose={toggleMenu}>
         <NavbarOpen>
-          {/* <IconButton onClick={toggleMenu} className="closeBtn">
-            <CloseIcon />
-          </IconButton> */}
           <NavLink to="/" onClick={toggleMenu}>
             <HomeIcon />
             <span>Home</span>

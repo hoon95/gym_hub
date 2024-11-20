@@ -1,26 +1,23 @@
-import { useState } from 'react';
 import { Modal, Button, Box, Typography } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import { Progress } from './Progress';
 import { modalStyle } from './Modal.styled';
-
-const qna = [
-  { question: '하루에 얼마나 걷나요?', answers: ['10분 미만', '10분 이상 ~ 30분 미만', '30분 이상 ~ 1시간 미만', '1시간 이상']},
-  { question: '일주일에 얼마나 숨차는 운동을 하나요?', answers: ['0회', '주 1~2회', '주 3~4회', '주 5회 이상']}
-]
+import { useModalStore } from '../../store/Store';
 
 export const ButtonModal = () => {
-  const [open, setOpen] = useState(false);
+  const { 
+    open, 
+    setOpen, 
+    currentQuestion, 
+    progress, 
+    handleNextQuestion,
+    resetModal,
+    qna 
+  } = useModalStore();
+
   const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
-  // Question progress variant setting
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [progress, setProgress] = useState(0);
-
-  const handleNextQuestion = () => {
-    setCurrentQuestion((prev) => (prev + 1) % qna.length);
-    setProgress((oldProgress) => oldProgress + (100 / qna.length));
+  const handleClose = () => {
+    resetModal();
   };
 
   return (
@@ -44,13 +41,17 @@ export const ButtonModal = () => {
             {qna[currentQuestion]?.question}
           </Typography>
           <Box sx={{ mt: 2 }}>
-            {qna[currentQuestion]?.answers.map((answer, index) => (
-              <Button variant="outlined" onClick={handleNextQuestion}>
+            {qna[currentQuestion]?.answers.map((answer: string, index: number) => (
+              <Button
+                key={index}
+                variant="outlined" 
+                onClick={handleNextQuestion}
+              >
                 {answer}
               </Button>
             ))}
           </Box>
-          <Progress progress={progress}/>
+          <Progress />
         </Box>
       </Modal>
     </div>

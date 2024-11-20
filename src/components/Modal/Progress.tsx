@@ -1,10 +1,9 @@
 import { Box, LinearProgress } from '@mui/material';
+import { useModalProgress } from '../../store/Store';
 
-interface ProgressProps {
-  progress: number;
-}
-
-export const Progress = ({ progress }: ProgressProps) => {
+export const Progress = () => {
+  const progress = useModalProgress();
+  
   return (
     <Box sx={{ width: '100%', mt: 2 }}>
       <LinearProgress variant="determinate" value={progress} />
