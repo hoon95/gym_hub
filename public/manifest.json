@@ -1,11 +1,17 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "GymHub - 세상의 모든 짐",
+  "short_name": "GymHub",
+  "description": "GymHub는 헬스장 정보를 제공하고, 초보자들이 쉽게 운동을 시작할 수 있도록 돕는 플랫폼입니다.",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "img/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "img/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
   "start_url": ".",
