@@ -46,6 +46,7 @@ export const ButtonModal = () => {
                 key={index}
                 variant="outlined" 
                 onClick={handleNextQuestion}
+                className="answerBtn"
               >
                 {answer}
               </Button>
