@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Section } from 'react-fullpage';
 import { HomeContainer } from './Main.styled';
-import { ButtonModal } from '../Modal/Modal';
-import { GlobalStyle } from '../../common/GlobalStyle';
+import { ButtonModal } from '../../Modal/Modal';
+import { GlobalStyle } from '../../../common/GlobalStyle';
 
 export const Home = () => {
   return (
