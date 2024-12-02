@@ -23,12 +23,22 @@ export const LeftContainer = styled.section`
     .btnContainer {
         display: flex;
         gap: var(--gap);
-    
+        height: 70px;
+        
         & .wod, .diet {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: calc(var(--gap) * 0.5);
+            cursor: pointer;
+            
+            &.active {
+                font-weight: bold;
+
+                .avatar {
+                    background: var(--green-500);
+                }
+            }
         }
     }
 `;

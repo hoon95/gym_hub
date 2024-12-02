@@ -1,9 +1,9 @@
 import { CardContainer } from './Card.styled';
 import { Card, CardMedia, CardContent, Typography } from '@mui/material';
-import card1 from '../../../assets/img/home/card_1.png';
-import card2 from '../../../assets/img/home/card_2.png';
-import card3 from '../../../assets/img/home/card_3.png';
-import card4 from '../../../assets/img/home/card_4.png';
+import card1 from '../../../assets/img/home/card/card_1.png';
+import card2 from '../../../assets/img/home/card/card_2.png';
+import card3 from '../../../assets/img/home/card/card_3.png';
+import card4 from '../../../assets/img/home/card/card_4.png';
 
 
 export const CardWrapper = () => {

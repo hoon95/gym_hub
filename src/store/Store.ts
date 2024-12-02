@@ -15,6 +15,11 @@ interface ModalState {
   resetModal: () => void;
 }
 
+interface ActiveState {
+  active: string;
+  setActive: (active: string) => void;
+}
+
 export const useModalProgress = () => useModalStore((state) => state.progress);
 
 export const useModalStore = create<ModalState>((set) => ({
@@ -66,3 +71,8 @@ export const useModalStore = create<ModalState>((set) => ({
     open: false
   })
 }));
+
+export const useActiveStore = create<ActiveState>((set) => ({
+  active: 'wod',
+  setActive: (active) => set({ active })
+}))
