@@ -3,3 +3,4 @@ declare module '*.woff2';
 declare module '*.png';
 
 declare module 'react-fullpage';
+declare module '@mui/joy/styles';

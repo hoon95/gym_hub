@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 
 export const LeftContainer = styled.section`
+    width: 40vw;
+
     .community {
         color: var(--green-500);
         font-size: calc(var(--text-sm) * 1.5);
@@ -49,5 +51,14 @@ export const ListContainer = styled.ul`
     gap: var(--gap);
     width: 30vw;
     padding-top: calc(var(--gap) * 2);
+    
+    >div {
+        cursor: pointer;
+
+        &:hover {
+            color: var(--light);
+            background: var(--green-500);
+        }
+    }
     
 `;

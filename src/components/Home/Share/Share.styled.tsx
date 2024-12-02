@@ -6,5 +6,5 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
     display: flex;
-    gap: calc(var(--gap) * 3);
+    gap: var(--gap);
 `;

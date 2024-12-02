@@ -18,6 +18,8 @@ interface ModalState {
 interface ActiveState {
   active: string;
   setActive: (active: string) => void;
+  clickIdx: number;
+  setClickIdx: (hoverIdx: number) => void;
 }
 
 export const useModalProgress = () => useModalStore((state) => state.progress);
@@ -74,5 +76,7 @@ export const useModalStore = create<ModalState>((set) => ({
 
 export const useActiveStore = create<ActiveState>((set) => ({
   active: 'wod',
-  setActive: (active) => set({ active })
+  setActive: (active) => set({ active }),
+  clickIdx: 99,
+  setClickIdx: (clickIdx) => set({ clickIdx })
 }))
