@@ -1,20 +1,11 @@
 import styled from "@emotion/styled";
 
-export const ShareContainer = styled.div`
-    /* display: flex; */
+export const Container = styled.div`
+    margin: calc(var(--gap) * 5) 0;
 `;
 
-export const ShareContentWrapper = styled.div`
+export const Wrapper = styled.div`
     display: flex;
-
-    & .contentDesc {
-        & .title {
-            h2 {
-                font-size: var(--text-md);
-            }
-            p {
-                color: var(--gray-500);
-            }
-        }
-    }
+    flex-direction: column;
+    gap: calc(var(--gap) * 3);
 `;
