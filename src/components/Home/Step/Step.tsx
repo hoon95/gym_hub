@@ -1,7 +1,7 @@
 import { Section } from 'react-fullpage';
 import { StepContainer } from './Step.styled';
-import { CardWrapper } from './Card';
-import { GlobalStyle } from '../../common/GlobalStyle';
+import { CardWrapper } from '../Card/Card';
+import { GlobalStyle } from '../../../common/GlobalStyle';
 
 // import Swiper
 import { Swiper, SwiperSlide } from 'swiper/react';

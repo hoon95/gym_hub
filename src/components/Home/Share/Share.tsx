@@ -4,6 +4,7 @@ import { ShareContainer, ShareContentWrapper } from "./Share.styled";
 const ShareContentTop = () => {
   return(
     <section className="contentDesc">
+      <p>Community</p>
       <div className="title">
         <h2>Weekly HOT</h2>
         <p>당신의 일상을 공유해보세요</p>
