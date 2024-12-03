@@ -1,3 +1,7 @@
+import WodImg1 from '../assets/img/community/community_1.png';
+import WodImg2 from '../assets/img/community/community_2.png';
+import WodImg3 from '../assets/img/community/community_3.png';
+
 import { create } from 'zustand';
 
 interface QnA {
@@ -15,14 +19,36 @@ interface ModalState {
   resetModal: () => void;
 }
 
+// Share - Left.tsx
+interface LeftTxtType {
+  name: string;
+  age: number;
+  content: string;
+}
+
+// Share - Insta.tsx
+interface ImgType {
+  url: string;
+  title: string;
+}
+
 interface ActiveState {
   active: string;
   setActive: (active: string) => void;
-  clickIdx: number;
-  setClickIdx: (hoverIdx: number) => void;
-}
 
-export const useModalProgress = () => useModalStore((state) => state.progress);
+  clickIdx: number;
+  setClickIdx: (clickIdx: number) => void;
+
+  // Share - Left.tsx
+  leftWodTxt: LeftTxtType[];
+  leftDietTxt: LeftTxtType[];
+  getLeftTxt: () => LeftTxtType[];
+
+  // Share - Insta.tsx
+  wodData: ImgType[];
+  dietData: ImgType[];
+  getCurrentData: () => ImgType[];
+}
 
 export const useModalStore = create<ModalState>((set) => ({
   open: false,
@@ -74,9 +100,46 @@ export const useModalStore = create<ModalState>((set) => ({
   })
 }));
 
-export const useActiveStore = create<ActiveState>((set) => ({
+export const useModalProgress = () => useModalStore((state) => state.progress);
+
+export const useActiveStore = create<ActiveState>((set, get) => ({
   active: 'wod',
   setActive: (active) => set({ active }),
-  clickIdx: 99,
-  setClickIdx: (clickIdx) => set({ clickIdx })
-}))
+
+  clickIdx: 0,
+  setClickIdx: (clickIdx) => set({ clickIdx }),
+
+  // Share - Left.tsx
+  leftWodTxt: [
+    {'name': '김희연', 'age': 21, 'content': '식습관 변화로 건강 관리'},
+    {'name': '이정훈', 'age': 57, 'content': '디지털 디톡스와 헬스의 조합'},
+    {'name': '박민지', 'age': 35, 'content': '직장인의 점심시간 활용법'},
+  ],
+  leftDietTxt: [
+    {'name': '김희연', 'age': 21, 'content': '식습관 변화로 건강 관리'},
+    {'name': '이정훈', 'age': 57, 'content': '디지털 디톡스와 헬스의 조합'},
+    {'name': '박민지', 'age': 35, 'content': '직장인의 점심시간 활용법'},
+  ],
+  getLeftTxt: () => {
+    const state = get();
+    const data = state.active === 'wod' ? state.leftWodTxt : state.leftDietTxt;
+    return data ? data : [];
+  },
+
+  // Share - Insta.tsx
+  wodData: [
+    {'url': WodImg1, 'title': '오운완 1'},
+    {'url': WodImg2, 'title': '오운완 2'},
+    {'url': WodImg3, 'title': '오운완 3'},
+  ] as ImgType[],
+  dietData: [
+    {'url': WodImg3, 'title': '식단인증 1'},
+    {'url': WodImg1, 'title': '식단인증 2'},
+    {'url': WodImg2, 'title': '식단인증 3'},
+  ] as ImgType[],
+  getCurrentData: () => { 
+    const state = get();
+    const data = state.active === 'wod' ? state.wodData : state.dietData;
+    return data ? data : [];
+  }
+}));

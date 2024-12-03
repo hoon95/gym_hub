@@ -40,30 +40,11 @@ const LeftBtn = () => {
 }
 
 const LeftList = () => {
-    const { active, setClickIdx } = useActiveStore();
-
-    interface wodDietData {
-        name: string;
-        age: number;
-        content: string;
-    }
-
-    const wodData: wodDietData[] = [
-        {'name': '김희연', 'age': 21, 'content': '식습관 변화로 건강 관리'},
-        {'name': '이정훈', 'age': 57, 'content': '디지털 디톡스와 헬스의 조합'},
-        {'name': '박민지', 'age': 35, 'content': '직장인의 점심시간 활용법'},
-    ];
-    const dietData: wodDietData[] = [
-        {'name': '김희연', 'age': 21, 'content': '식습관 변화로 건강 관리'},
-        {'name': '이정훈', 'age': 57, 'content': '디지털 디톡스와 헬스의 조합'},
-        {'name': '박민지', 'age': 35, 'content': '직장인의 점심시간 활용법'},
-    ];
-
-    const dataArr: wodDietData[] = active === "wod" ? wodData : dietData;
+    const { setClickIdx, getLeftTxt } = useActiveStore();
 
     return(
         <ListContainer>
-        {dataArr.map((item, idx) => (
+        {getLeftTxt().map((item, idx) => (
             <Box
                 sx={{ boxShadow: 4, padding: 2, borderRadius: 4, marginLeft: 1 }}
                 onClick={() => setClickIdx(idx)}
