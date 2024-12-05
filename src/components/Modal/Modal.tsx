@@ -6,13 +6,12 @@ import { useModalStore } from '../../store/Store';
 
 export const ButtonModal = () => {
   const { 
-    open, 
-    setOpen, 
-    currentQuestion, 
-    progress, 
+    open,
+    setOpen,
+    currentQuestion,
     handleNextQuestion,
     resetModal,
-    qna 
+    qna
   } = useModalStore();
 
   const handleOpen = () => setOpen(true);
@@ -22,7 +21,7 @@ export const ButtonModal = () => {
 
   return (
     <div>
-      <Button 
+      <Button
         onClick={handleOpen}
         variant="contained"
         color="primary"

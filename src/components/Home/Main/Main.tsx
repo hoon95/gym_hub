@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { Section } from 'react-fullpage';
 import { HomeContainer } from './Main.styled';
 import { ButtonModal } from '../../Modal/Modal';

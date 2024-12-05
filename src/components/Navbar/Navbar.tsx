@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { NavbarContainer, NavbarOpen } from './Navbar.styled';
-import { NavLink } from 'react-router-dom';
-import { IconButton, Drawer, Divider } from '@mui/material';
+import { NavLink, useLocation } from 'react-router-dom';
+import { IconButton, Drawer } from '@mui/material';
 
 // Icon Load
 import MenuIcon from '@mui/icons-material/Menu';
@@ -12,14 +12,21 @@ import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const location = useLocation();
+  const getIconColor = () => {
+    console.log(location);
+    return location.pathname === '/' 
+      && (location.hash === '#home' || location.hash === '') ? '#fff' : '#000'
+  };
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
     <NavbarContainer>
-      <IconButton edge="start" color="inherit" aria-label="menu" onClick={toggleMenu}>
-        <MenuIcon />
+      <IconButton edge="start" aria-label="menu" onClick={toggleMenu}>
+        <MenuIcon sx={{ color: getIconColor() }} />
       </IconButton>
       
       <Drawer anchor="right" open={isMenuOpen} onClose={toggleMenu}>

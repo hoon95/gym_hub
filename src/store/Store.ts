@@ -65,7 +65,7 @@ export const useModalStore = create<ModalState>((set) => ({
   currentQuestion: 0,
   progress: 0,
   qna: [
-    { 
+    {
       question: '하루에 얼마나 걷나요?', 
       answers: ['10분 미만', '10분 이상 ~ 30분 미만', '30분 이상 ~ 1시간 미만', '1시간 이상']
     },

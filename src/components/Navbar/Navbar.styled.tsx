@@ -12,7 +12,6 @@ export const NavbarContainer = styled.nav`
     margin-top: var(--gap);
 
     & .MuiSvgIcon-root {
-      color: var(--dark);
       font-size: var(--text-md);
   
       &.move {
@@ -32,10 +31,10 @@ export const NavbarOpen = styled.nav`
   padding-top: var(--gap);
   overflow: hidden;
 
-  & .closeBtn {
+  /* & .closeBtn {
     color: var(--dark);
     cursor: pointer;
-  }
+  } */
 
   a {
     display: flex;
