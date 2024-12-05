@@ -1,7 +1,7 @@
 # 💻 프로젝트 소개
 
 <img src="/public/img/cover.png">
-<img src="/public/img/concept.png">
+<img src="/public/img/Concept.png">
 
 <br><br><br>
 
