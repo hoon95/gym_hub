@@ -19,7 +19,7 @@ interface SliderProps {
   dir: string;
 }
 
-const Slider: React.FC<SliderProps> = ({ tags, num, dir }) => {
+const Slider = ({ tags, num, dir }: SliderProps) => {
   const randomTags = getRandomTags(tags, num);
 
   return (
@@ -37,8 +37,10 @@ const Slider: React.FC<SliderProps> = ({ tags, num, dir }) => {
       }}
       className="hashSlide"
     >
-      {randomTags.map((tag) => (
-        <SwiperSlide dir={dir}>{tag}</SwiperSlide>
+      {randomTags.map((tag, idx) => (
+        <SwiperSlide key={idx} dir={dir}>
+            {tag}
+        </SwiperSlide>
       ))}
     </Swiper>
   )

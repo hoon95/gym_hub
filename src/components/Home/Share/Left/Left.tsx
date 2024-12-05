@@ -46,6 +46,7 @@ const LeftList = () => {
         <ListContainer>
         {getLeftTxt().map((item, idx) => (
             <Box
+                key={idx}
                 sx={{ boxShadow: 4, padding: 2, borderRadius: 4, marginLeft: 1 }}
                 onClick={() => setClickIdx(idx)}
             >
