@@ -1,6 +1,15 @@
-import WodImg1 from '../assets/img/community/community_1.png';
-import WodImg2 from '../assets/img/community/community_2.png';
-import WodImg3 from '../assets/img/community/community_3.png';
+import WodImg1 from '../assets/img/community/wod/wod_1.png';
+import WodImg2 from '../assets/img/community/wod/wod_2.png';
+import WodImg3 from '../assets/img/community/wod/wod_3.png';
+import DietImg1 from '../assets/img/community/diet/diet_1.png';
+import DietImg2 from '../assets/img/community/diet/diet_2.png';
+import DietImg3 from '../assets/img/community/diet/diet_3.png';
+import WodAvt1 from '../assets/img/community/wod/wod_avatar_1.png'
+import WodAvt2 from '../assets/img/community/wod/wod_avatar_2.png'
+import WodAvt3 from '../assets/img/community/wod/wod_avatar_3.png'
+import DietAvt1 from '../assets/img/community/diet/diet_avatar_1.png'
+import DietAvt2 from '../assets/img/community/diet/diet_avatar_2.png'
+import DietAvt3 from '../assets/img/community/diet/diet_avatar_3.png'
 
 import { create } from 'zustand';
 
@@ -28,6 +37,7 @@ interface LeftTxtType {
 
 // Share - Insta.tsx
 interface ImgType {
+  avatar: string;
   url: string;
   title: string;
 }
@@ -111,14 +121,14 @@ export const useActiveStore = create<ActiveState>((set, get) => ({
 
   // Share - Left.tsx
   leftWodTxt: [
-    {'name': '김희연', 'age': 21, 'content': '식습관 변화로 건강 관리'},
+    {'name': '김희연', 'age': 21, 'content': '헬린이의 운동 도전기'},
     {'name': '이정훈', 'age': 57, 'content': '디지털 디톡스와 헬스의 조합'},
-    {'name': '박민지', 'age': 35, 'content': '직장인의 점심시간 활용법'},
+    {'name': '박민지', 'age': 35, 'content': '꾸준함이 생명이다!'},
   ],
   leftDietTxt: [
-    {'name': '김희연', 'age': 21, 'content': '식습관 변화로 건강 관리'},
-    {'name': '이정훈', 'age': 57, 'content': '디지털 디톡스와 헬스의 조합'},
-    {'name': '박민지', 'age': 35, 'content': '직장인의 점심시간 활용법'},
+    {'name': '박으뜸', 'age': 25, 'content': '식습관 변화로 건강 관리'},
+    {'name': '김민', 'age': 33, 'content': '바디프로필 식단 꿀팁'},
+    {'name': '송아름', 'age': 42, 'content': '직장인의 점심시간 활용법'},
   ],
   getLeftTxt: () => {
     const state = get();
@@ -128,16 +138,16 @@ export const useActiveStore = create<ActiveState>((set, get) => ({
 
   // Share - Insta.tsx
   wodData: [
-    {'url': WodImg1, 'title': '오운완 1'},
-    {'url': WodImg2, 'title': '오운완 2'},
-    {'url': WodImg3, 'title': '오운완 3'},
+    {'avatar':WodAvt1, 'url': WodImg1, 'title': '#헬린이 #운동인증 #오운완 #운동기록 #피트니스도전'},
+    {'avatar':WodAvt2, 'url': WodImg2, 'title': '#디지털디톡스 #헬스 #건강한삶 #균형잡힌생활 #운동루틴공유'},
+    {'avatar':WodAvt3, 'url': WodImg3, 'title': '#꾸준함 #운동의중요성 #포기하지않기 #건강관리 #운동습관'},
   ] as ImgType[],
   dietData: [
-    {'url': WodImg3, 'title': '식단인증 1'},
-    {'url': WodImg1, 'title': '식단인증 2'},
-    {'url': WodImg2, 'title': '식단인증 3'},
+    {'avatar':DietAvt1, 'url': DietImg1, 'title': '#식습관개선 #건강한식사 #라이프스타일 #건강관리 #웰빙'},
+    {'avatar':DietAvt2, 'url': DietImg2, 'title': '#바프준비 #다이어트팁 #식단관리 #체지방감량 #운동과식단'},
+    {'avatar':DietAvt3, 'url': DietImg3, 'title': '#직장인운동 #점심시간활용 #시간관리 #건강관리 #워라밸'},
   ] as ImgType[],
-  getCurrentData: () => { 
+  getCurrentData: () => {
     const state = get();
     const data = state.active === 'wod' ? state.wodData : state.dietData;
     return data ? data : [];

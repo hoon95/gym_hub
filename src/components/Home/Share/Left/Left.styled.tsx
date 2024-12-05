@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const LeftContainer = styled.section`
-    width: 40vw;
+    /* width: 40vw; */
 
     .community {
         color: var(--green-500);

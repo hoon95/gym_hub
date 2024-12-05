@@ -6,5 +6,6 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
     display: flex;
-    gap: var(--gap);
+    justify-content: space-evenly;
+    gap: calc(var(--gap) * 5);
 `;
