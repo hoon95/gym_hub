@@ -22,6 +22,10 @@ interface ModalState {
   open: boolean;
   currentQuestion: number;
   progress: number;
+  quizStart: boolean;
+  setQuizStart: (start: boolean) => void;
+  age: number;
+  setAge: (age: number) => void;
   qna: QnA[];
   setOpen: (open: boolean) => void;
   handleNextQuestion: () => void;
@@ -64,6 +68,10 @@ export const useModalStore = create<ModalState>((set) => ({
   open: false,
   currentQuestion: 0,
   progress: 0,
+  quizStart: true,
+  setQuizStart: (start) => set({ quizStart: start }),
+  age: 0,
+  setAge: (age) => set({ age }),
   qna: [
     {
       question: '하루에 얼마나 걷나요?', 
@@ -102,11 +110,13 @@ export const useModalStore = create<ModalState>((set) => ({
   handleNextQuestion: () => set((state) => ({
     currentQuestion: (state.currentQuestion + 1) % state.qna.length,
     progress: state.progress + (100 / state.qna.length)
-  })),
+  })),  
   resetModal: () => set({
     currentQuestion: 0,
     progress: 0,
-    open: false
+    open: false,
+    quizStart: true,
+    age: 0
   })
 }));
 

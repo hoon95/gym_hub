@@ -1,4 +1,4 @@
-export const modalStyle = {
+export const InnerStyle = {
   position: 'absolute',
   top: '50%',
   left: '50%',
@@ -14,5 +14,5 @@ export const modalStyle = {
   '& .answerBtn': {
     width: '100%',
     marginBottom: '0.5rem',
-  }
+  },
 }
