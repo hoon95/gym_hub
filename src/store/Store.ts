@@ -29,6 +29,7 @@ interface ModalState {
   qna: QnA[];
   setOpen: (open: boolean) => void;
   handleNextQuestion: () => void;
+  finalResult: number;
   resetModal: () => void;
 }
 
@@ -109,14 +110,18 @@ export const useModalStore = create<ModalState>((set) => ({
   setOpen: (open) => set({ open }),
   handleNextQuestion: () => set((state) => ({
     currentQuestion: (state.currentQuestion + 1) % state.qna.length,
-    progress: state.progress + (100 / state.qna.length)
-  })),  
+    progress: state.progress + (100 / state.qna.length),
+    finalResult: state.age + state.finalResult
+  })),
+  finalResult: 0,
+  quizComplete: false,
   resetModal: () => set({
     currentQuestion: 0,
     progress: 0,
     open: false,
     quizStart: true,
-    age: 0
+    age: 0,
+    finalResult: 0
   })
 }));
 

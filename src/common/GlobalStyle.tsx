@@ -58,13 +58,13 @@ export const GlobalStyle = () => (
       }
 
       /* fullPage setting */
-      .fp-watermark {
-        display: none !important;
-      }
       #fullpage {
         padding: 0 calc(var(--gap) * 5);
+        
+        & .fp-watermark {
+          display: none !important;
+        }
       }
-
     `}
   />
 );
