@@ -1,21 +1,30 @@
-import { SectionsContainer } from 'react-fullpage';
+import ReactFullpage from "@fullpage/react-fullpage";
 import { Home } from "../components/Home/Main/Main";
 import { Step } from "../components/Home/Step/Step";
-import { Share } from 'components/Home/Share/Share';
+import { Share } from "components/Home/Share/Share";
 
 export const HomePage = () => {
-  const options = {
-    navigation: false,
-    anchors: ['home', 'step', 'share'],
-    delay: 900,
-  };
-
   return (
-    <SectionsContainer {...options}>
-      <Home />
-      <Step />
-      <Share />
-      {/* <Footer /> */}
-    </SectionsContainer>
+    <ReactFullpage
+      licenseKey="OPEN-SOURCE-GPLV3"
+      anchors={["home", "step", "share"]}
+      scrollingSpeed={1000}
+      credits={{ enabled: false }}
+      render={() => {
+        return (
+          <>
+            <div className="section">
+              <Home />
+            </div>
+            <div className="section">
+              <Step />
+            </div>
+            <div className="section">
+              <Share />
+            </div>
+          </>
+        );
+      }}
+    />
   );
 }

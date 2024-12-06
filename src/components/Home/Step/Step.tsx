@@ -1,4 +1,3 @@
-import { Section } from 'react-fullpage';
 import { StepContainer } from './Step.styled';
 import { CardWrapper } from '../Card/Card';
 import { GlobalStyle } from '../../../common/GlobalStyle';
@@ -55,7 +54,7 @@ export const Step = () => {
   ];
   
   return (
-    <Section>
+    <>
       <StepContainer>
         <GlobalStyle />
         <section>
@@ -66,6 +65,6 @@ export const Step = () => {
         </section>
       </StepContainer>
       <CardWrapper />
-    </Section>
+    </>
   );
 }

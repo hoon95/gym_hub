@@ -1,8 +1,6 @@
 import styled from "@emotion/styled";
 
 export const LeftContainer = styled.section`
-    /* width: 40vw; */
-
     .community {
         color: var(--green-500);
         font-size: calc(var(--text-sm) * 1.5);
