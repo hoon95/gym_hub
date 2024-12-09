@@ -7,18 +7,15 @@ import SendIcon from '@mui/icons-material/Send';
 
 export const ButtonModal = () => {
   const { 
-    open,
-    setOpen,
+    open, setOpen,
     resetModal
   } = useModalStore();
 
   const handleOpen = () => setOpen(true);
-  const handleClose = () => {
-    resetModal();
-  };
+  const handleClose = () => resetModal();
 
   return (
-    <div>
+    <>
       <Button
         onClick={handleOpen}
         variant="contained"
@@ -34,6 +31,6 @@ export const ButtonModal = () => {
         className="modalContainer">
         <Inner />
       </Modal>
-    </div>
+    </>
   );
 }

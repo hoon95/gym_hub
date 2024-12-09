@@ -32,7 +32,7 @@ export const Inner = () => {
     handleNextQuestion,
     qna,
     progress,
-    finalResult
+    finalResult, setFinalResult
   } = useModalStore();
 
   const Start = () => {
@@ -45,7 +45,10 @@ export const Inner = () => {
         <Button
             variant="contained"
             color="primary"
-            onClick={() => setQuizStart(false)}
+            onClick={() => {
+              setQuizStart(false);
+              setFinalResult(age);
+            }}
             disabled={!age}>
             START
         </Button>
@@ -59,13 +62,13 @@ export const Inner = () => {
           {qna[currentQuestion]?.question}
         </Typography>
         <Box sx={{ mt: 2 }}>
-          {qna[currentQuestion]?.answers.map((answer: string, index: number) => (
+          {qna[currentQuestion]?.answers.map((answer, index) => (
             <Button
               key={index}
               variant="outlined" 
-              onClick={handleNextQuestion}
+              onClick={() => handleNextQuestion(answer.weight)}
               className="answerBtn">
-            {answer}
+            {answer.text}
             </Button>
           ))}
         </Box>
