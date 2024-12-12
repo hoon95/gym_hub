@@ -54,8 +54,6 @@ export const Search = () => {
         </section>
         <Input />
         <List />
-        <List />
-        <List />
       </div>
     </SearchContainer>
   );

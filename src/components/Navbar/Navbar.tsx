@@ -13,7 +13,6 @@ export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const location = useLocation();
-  console.log(location);
   const getIconColor = () => {
     return location.pathname === '/'
       && (location.hash === '#home' || location.hash === '') 

@@ -3,30 +3,64 @@ import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import { TypoContainer } from "./List.styled";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useSearchStore } from 'store/Store';
 
-import card1 from '../../../assets/img/home/card/card_1.png';
+// Icons Load
+import PhoneIcon from '@mui/icons-material/Phone';
+import ScheduleIcon from '@mui/icons-material/Schedule';
 
 export const List = () => {
   useEffect(() => {
     AOS.init();
   }, []);
+  
+  const { center } = useSearchStore();
 
-  return(
-    <Card sx={{ display: 'flex', width: '50vw', height: '30vh', minHeight: '200px' }}>
-      <CardMedia sx={{ width: '60%' }} component="img" image={card1} alt="짐허브 지점 정보" data-aos="fade-up" data-aos-duration="1000" />
-      <CardContent data-aos="fade-up" data-aos-duration="1000">
-        <Typography sx={{ fontSize: 'var(--text-md)', fontWeight: 'bold' }}>
-          짐허브 봉천
-        </Typography>
-        <Typography sx={{ fontSize: 'var(--text-sm)' }}>
-          서울시 관악구 봉천동 12-34 | 승리빌딩 3층
-        </Typography>
-        <TypoContainer>
-          <Typography sx={{ fontSize: 'var(--text-sm)' }}>
-            02-123-4567
-          </Typography>
-        </TypoContainer>
-      </CardContent>
-    </Card>
-  )
-}
+  return (
+    <>
+      {center.map((item, index) => (
+        <Card
+          key={index} data-aos="fade-up" data-aos-duration="1000"
+          sx={{ display: 'flex', width: '50vw', height: '30vh', minHeight: '200px', margin: '20px 0' }}
+        >
+          <CardMedia
+            sx={{ width: '60%' }}
+            component="img"
+            image={item.image}
+            alt={`${item.name} 정보`}
+          />
+          <CardContent>
+            <TypoContainer>
+              <Typography sx={{ fontSize: 'var(--text-md)', fontWeight: 'bold' }}>
+                {item.name}
+              </Typography>
+
+              <Typography sx={{ fontSize: 'var(--text-sm)' }}>
+                {item.address}
+              </Typography>
+
+              <div className="contact">
+                <PhoneIcon />
+                <Typography sx={{ fontSize: 'var(--text-sm)' }}>
+                  {item.phone}
+                </Typography>
+              </div>
+
+              <div className="schedule">
+                <ScheduleIcon />
+                <div>
+                  <Typography sx={{ fontSize: 'var(--text-sm)' }}>
+                    (평일) {item.schedule.weekday}
+                  </Typography>
+                  <Typography sx={{ fontSize: 'var(--text-sm)', color: '#ff1744' }}>
+                    (주말) {item.schedule.weekend}
+                  </Typography>
+                </div>
+              </div>
+            </TypoContainer>
+          </CardContent>
+        </Card>
+      ))}
+    </>
+  );
+};

@@ -4,12 +4,15 @@ import WodImg3 from '../assets/img/community/wod/wod_3.png';
 import DietImg1 from '../assets/img/community/diet/diet_1.png';
 import DietImg2 from '../assets/img/community/diet/diet_2.png';
 import DietImg3 from '../assets/img/community/diet/diet_3.png';
-import WodAvt1 from '../assets/img/community/wod/wod_avatar_1.png'
-import WodAvt2 from '../assets/img/community/wod/wod_avatar_2.png'
-import WodAvt3 from '../assets/img/community/wod/wod_avatar_3.png'
-import DietAvt1 from '../assets/img/community/diet/diet_avatar_1.png'
-import DietAvt2 from '../assets/img/community/diet/diet_avatar_2.png'
-import DietAvt3 from '../assets/img/community/diet/diet_avatar_3.png'
+import WodAvt1 from '../assets/img/community/wod/wod_avatar_1.png';
+import WodAvt2 from '../assets/img/community/wod/wod_avatar_2.png';
+import WodAvt3 from '../assets/img/community/wod/wod_avatar_3.png';
+import DietAvt1 from '../assets/img/community/diet/diet_avatar_1.png';
+import DietAvt2 from '../assets/img/community/diet/diet_avatar_2.png';
+import DietAvt3 from '../assets/img/community/diet/diet_avatar_3.png';
+import Center1 from '../assets/img/search/center_1.png';
+import Center2 from '../assets/img/search/center_2.png';
+import Center3 from '../assets/img/search/center_3.png';
 
 import { create } from 'zustand';
 
@@ -64,6 +67,21 @@ interface ActiveState {
   wodData: ImgType[];
   dietData: ImgType[];
   getCurrentData: () => ImgType[];
+}
+
+interface Search {
+  name: string;
+  address: string;
+  phone: string;
+  schedule: {
+    weekday: string,
+    weekend: string
+  };
+  image: string;
+}
+
+interface SearchState {
+  center: Search[];
 }
 
 export const useModalProgress = () => useModalStore((state) => state.progress);
@@ -189,3 +207,38 @@ export const useActiveStore = create<ActiveState>((set, get) => ({
     return data ? data : [];
   }
 }));
+
+export const useSearchStore = create<SearchState>((set) => ({
+  center: [
+    {
+      name: "짐허브 봉천",
+      address: "서울시 관악구 봉천동 12-34 | 승리빌딩 3층",
+      phone: "02-000-0000",
+      schedule: {
+        weekday: "00:00 ~ 24:00",
+        weekend: "06:00 ~ 21:00",
+      },
+      image: Center1,
+    },
+    {
+      name: "짐허브 서울대입구",
+      address: "서울시 관악구 서울대입구",
+      phone: "02-111-1111",
+      schedule: {
+        weekday: "07:00 ~ 23:00",
+        weekend: "08:00 ~ 22:00",
+      },
+      image: Center2,
+    },
+    {
+      name: "짐허브 신림",
+      address: "서울시 관악구 신림동 56-78 | 희망빌딩 2층",
+      phone: "02-222-2222",
+      schedule: {
+        weekday: "06:00 ~ 23:00",
+        weekend: "07:00 ~ 21:00",
+      },
+      image: Center3,
+    },
+  ],
+}))
