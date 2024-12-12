@@ -13,10 +13,11 @@ export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const location = useLocation();
+  console.log(location);
   const getIconColor = () => {
-    console.log(location);
-    return location.pathname === '/' 
-      && (location.hash === '#home' || location.hash === '') ? '#fff' : '#000'
+    return location.pathname === '/'
+      && (location.hash === '#home' || location.hash === '') 
+      || location.pathname === '/search' ? '#fff' : '#000'
   };
 
   const toggleMenu = () => {

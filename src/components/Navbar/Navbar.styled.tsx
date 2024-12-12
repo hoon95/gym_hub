@@ -19,7 +19,6 @@ export const NavbarContainer = styled.nav`
       }
     }
   }
-
 `;
 
 export const NavbarOpen = styled.nav`
@@ -30,11 +29,6 @@ export const NavbarOpen = styled.nav`
   width: 15vw;
   padding-top: var(--gap);
   overflow: hidden;
-
-  /* & .closeBtn {
-    color: var(--dark);
-    cursor: pointer;
-  } */
 
   a {
     display: flex;

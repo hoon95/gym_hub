@@ -54,7 +54,7 @@ export const GlobalStyle = () => (
         color: #333333;
         background-color: #ffffff;
         margin: 0;
-        padding: 0 calc(var(--gap) * 5);
+        /* padding: 0 calc(var(--gap) * 5); */
       }
 
       /* fullPage setting */
@@ -65,6 +65,9 @@ export const GlobalStyle = () => (
           display: none !important;
         }
       }
+
+      /* MUI Card setting */
+      & .fp-overflow { overflow-y: visible !important; }
     `}
   />
 );

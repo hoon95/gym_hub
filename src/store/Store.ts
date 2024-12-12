@@ -34,14 +34,14 @@ interface ModalState {
   resetModal: () => void;
 }
 
-// Share - Left.tsx
+// Share - Left
 interface LeftTxtType {
   name: string;
   age: number;
   content: string;
 }
 
-// Share - Insta.tsx
+// Share - Insta
 interface ImgType {
   avatar: string;
   url: string;
@@ -65,6 +65,8 @@ interface ActiveState {
   dietData: ImgType[];
   getCurrentData: () => ImgType[];
 }
+
+export const useModalProgress = () => useModalStore((state) => state.progress);
 
 export const useModalStore = create<ModalState>((set) => ({
   open: false,
@@ -145,9 +147,6 @@ export const useModalStore = create<ModalState>((set) => ({
     finalResult: 0
   })
 }));
-
-
-export const useModalProgress = () => useModalStore((state) => state.progress);
 
 export const useActiveStore = create<ActiveState>((set, get) => ({
   active: 'wod',

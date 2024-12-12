@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const StepContainer = styled.div`
   text-align: center;
-  padding: calc(var(--gap) * 4) 0 calc(var(--gap) * 2) 0;
+  padding: calc(var(--gap) * 2) 0;
 
   h2 {
     font-size: var(--text-md);
