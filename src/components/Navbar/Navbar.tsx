@@ -7,7 +7,6 @@ import { IconButton, Drawer } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import HomeIcon from "@mui/icons-material/Home";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
