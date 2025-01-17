@@ -55,7 +55,6 @@ export const GlobalStyle = () => (
         background-color: #ffffff;
         margin: 0;
         overflow: visible !important; // data-aos settings
-        /* padding: 0 calc(var(--gap) * 5); */
       }
 
       /* fullPage setting */

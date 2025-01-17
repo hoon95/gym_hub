@@ -145,17 +145,17 @@ export const useModalStore = create<ModalState>((set) => ({
   setOpen: (open) => set({ open }),
   handleNextQuestion: (weight) =>
     set((state) => {
-      const initialResult = state.age;
-      const updatedResult = initialResult + weight;
+      const updatedResult = state.age + weight;
       const clampedResult = Math.max(
-        initialResult - 10,
-        Math.min(updatedResult, initialResult + 10)
+        state.age - 5,
+        Math.min(updatedResult, state.age + 5)
       );
 
       return {
         currentQuestion: (state.currentQuestion + 1) % state.qna.length,
         progress: state.progress + 100 / state.qna.length,
         finalResult: clampedResult,
+        age: updatedResult,
       };
     }),
   finalResult: 0,
