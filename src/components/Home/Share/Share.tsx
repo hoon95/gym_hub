@@ -1,11 +1,9 @@
-import { Left } from './Left/Left';
-import { Right } from './Right/Right';
-import { Footer } from 'components/Footer/Footer';
+import { Left } from "./Left/Left";
+import { Right } from "./Right/Right";
 import { Container, Wrapper } from "./Share.styled";
 
-
 export const Share = () => {
-  return(
+  return (
     <>
       <Container>
         <Wrapper>
@@ -13,7 +11,6 @@ export const Share = () => {
           <Right />
         </Wrapper>
       </Container>
-      <Footer />
     </>
-  )
+  );
 };

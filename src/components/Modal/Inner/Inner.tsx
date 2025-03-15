@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { Box, Typography, TextField, Button } from "@mui/material";
 import { Progress } from "./Progress";

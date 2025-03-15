@@ -1,7 +1,9 @@
+"use client";
+
 import ReactFullpage from "@fullpage/react-fullpage";
 import { Home } from "../components/Home/Main/Main";
 import { Step } from "../components/Home/Step/Step";
-import { Share } from "components/Home/Share/Share";
+import { Share } from "../components/Home/Share/Share";
 
 export const HomePage = () => {
   return (
@@ -27,4 +29,4 @@ export const HomePage = () => {
       }}
     />
   );
-}
+};
