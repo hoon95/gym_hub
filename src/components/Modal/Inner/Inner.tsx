@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { Box, Typography, TextField, Button } from "@mui/material";
 import { Progress } from "./Progress";
@@ -19,11 +17,15 @@ const Input = () => {
       value={age ? age : ""}
       onChange={(e) => {
         const inputVal = e.target.value;
-        /^\d*$/.test(inputVal) // 숫자 제한
-          ? Number(inputVal) < 200
-            ? setAge(Number(inputVal))
-            : "" // 범위 지정
-          : "";
+
+        if (/^\d*$/.test(inputVal)) {
+          // 숫자 제한
+          const ageValue = Number(inputVal);
+          if (ageValue < 200) {
+            // 범위 지정
+            setAge(ageValue);
+          }
+        }
       }}
     />
   );
