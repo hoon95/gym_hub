@@ -31,7 +31,7 @@ export const CardWrapper = () => {
   ];
   return (
     <CardContainer>
-      {cards.map((item, _) => (
+      {cards.map((item) => (
         <Card sx={{ width: 250 }} key={item.title}>
           <CardMedia>
             <Image
