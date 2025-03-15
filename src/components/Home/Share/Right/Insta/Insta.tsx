@@ -8,6 +8,7 @@ import Typography from "@mui/material/Typography";
 import MoreHoriz from "@mui/icons-material/MoreHoriz";
 import FavoriteBorderIcon from "@mui/icons-material/Favorite";
 import BookmarkBorderRoundedIcon from "@mui/icons-material/BookmarkBorderRounded";
+import Image from "next/image";
 
 export const InstagramPost = () => {
   const { active, clickIdx, getCurrentData, getLeftTxt } = useActiveStore();
@@ -22,7 +23,7 @@ export const InstagramPost = () => {
         <MoreHoriz />
       </CardContent>
       <Box>
-        <img
+        <Image
           src={getCurrentData()[clickIdx]?.url}
           alt={active === "wod" ? "운동 인증 이미지" : "식단 공유 이미지"}
           style={{
