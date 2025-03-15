@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import mainBg from "../../../assets/img/home/main_bg.png";
 
 export const HomeContainer = styled.div`
   position: absolute;
@@ -7,8 +6,8 @@ export const HomeContainer = styled.div`
   left: calc(var(--gap) * -5);
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0,0,0,.7);
-  background-image: url(${mainBg});
+  background-color: rgba(0, 0, 0, 0.7);
+  background-image: url("/img/main_bg.png");
   background-size: cover;
   color: #ffffff;
   padding: 0 calc(var(--gap) * 5);
@@ -20,13 +19,13 @@ export const HomeContainer = styled.div`
   gap: var(--gap);
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,.7);
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: 1;
   }
 
@@ -45,17 +44,16 @@ export const HomeContainer = styled.div`
       font-weight: bold;
       padding-bottom: var(--gap);
     }
-      
+
     .desc {
       font-size: var(--text-md);
       font-weight: regular;
       padding-bottom: var(--gap);
     }
-    
+
     .testBtn {
       width: 100px;
       border-radius: 15px;
     }
   }
-
 `;
