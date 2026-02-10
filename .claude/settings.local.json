@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(find:*)",
+      "Bash(pnpm build:*)",
+      "Bash(pnpm lint:*)",
+      "Bash(test:*)",
+      "WebFetch(domain:www.figma.com)",
+      "Bash(npx next build:*)",
+      "Bash(npx tsc:*)",
+      "Bash(findstr:*)",
+      "Bash(Select-String -Pattern \"community\" -SimpleMatch)",
+      "Bash(pnpm dev:*)",
+      "Bash(curl:*)",
+      "Bash(cat:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(pnpm remove:*)",
+      "Bash(pnpm install:*)"
+    ],
+    "additionalDirectories": [
+      "c:\\gitbasic\\kore-web\\.claude\\skills"
+    ]
+  }
+}
